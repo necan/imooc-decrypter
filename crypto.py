@@ -99,6 +99,6 @@ def decrypt_info(data: str):
 
 
 # 解密 ts
-def decrypt_ts(data: bytes, key: bytes, iv=b'\x00' * 16):
-    decryptor = AES.new(key, AES.MODE_CBC, iv=iv)
+def decrypt_ts(data: bytes, key: bytes):
+    decryptor = AES.new(key, AES.MODE_CBC)
     return decryptor.decrypt(data)
